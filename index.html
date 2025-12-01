@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coin</title>
+    <title>Model Viewer Demo</title>
 
     <script
       type="module"
@@ -15,14 +15,17 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #f5f5f5;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #fff;
       }
+
       model-viewer {
-        height: 90vh;
-        width: 90vh;
+        height: 100vh;
+        width: 200vh;
+        display: block;
       }
     </style>
   </head>
@@ -30,22 +33,16 @@
   <body>
     <model-viewer
       src="https://cdn.tinyglb.com/models/dab7f03a81d040b5be002050b7ff1ce5.glb"
+      shadow-intensity="1"
       camera-controls
-      auto-rotate
-      rotation-per-second="20deg"
+      touch-action="pan-y"
       disable-zoom
-      environment-image="neutral"
-      exposure="1.4"
-      shadow-intensity="1.2"
-      shadow-softness="0.5"
-      interaction-prompt="none">
-
-      <!-- Bright frontal key light -->
-      <directional-light intensity="2.5" color="#ffffff" direction="0.5 1 1"></directional-light>
-
-      <!-- Fill light -->
-      <directional-light intensity="1.0" color="#ffdca8" direction="-1 0.5 0.5"></directional-light>
-
+      auto-rotate
+      auto-rotate-delay="0"
+      rotation-per-second="30deg"
+      interaction-prompt="none"
+      camera-orbit="44.95deg 109.8deg 0.08188m"
+      field-of-view="30deg">
     </model-viewer>
   </body>
 </html>
